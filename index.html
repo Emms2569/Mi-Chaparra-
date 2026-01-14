@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi papitas amorcito papitas❤️</title>
+
+<style>
+body {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  font-family: monospace;
+  padding: 20px;
+  overflow-x: hidden;
+  text-align: center;
+  position: relative;
+}
+
+h2 {
+  color: #ff7b72;
+  font-size: 1.8em;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+button {
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  margin-top: 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+button:hover {
+  transform: scale(1.1);
+  background: #ff7b8a;
+}
+
+#final {
+  display: none;
+  margin-top: 30px;
+  font-size: 20px;
+  color: #ffb3c1;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+.foto {
+  max-width: 80%;
+  margin: 20px 0;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #ff7b72;
+  display: none;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: floatUp linear infinite;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+.heart:before { top: -10px; left: 0; }
+.heart:after { left: 10px; top: 0; }
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(45deg); opacity:1;}
+  100% { transform: translateY(-500px) rotate(45deg); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<h2>Papas <span style="color:#ffb3c1;">amor.exe</span> para mi papitas enojoncitas...</h2>
+
+<pre id="code"></pre><span class="cursor">|</span>
+
+<br>
+<button onclick="runLove()">Presioname amor jajaja ❤️</button>
+
+<div id="final">
+  ❤️ Heidi, tiamoooo amorcito ❤️  
+  <br><br>
+  Eres mi casualidad favorita,  
+  mi decisión diaria,  
+  y el amor que quiero ejecutar  
+  por el resto de mi vida.
+  te amoooo mi amorcito 🥰❤️
+  Feliiiiiiiz Cumpleañooooos!!!!! 🥳❤️❤️
+  <br><br>
+  <img class="foto" id="foto1" src="foto1.jpeg" alt="Foto 1">
+  <img class="foto" id="foto2" src="foto2.jpeg" alt="Foto 2">
+  <img class="foto" id="foto3" src="foto3.jpeg" alt="Foto 3">
+  <img class="foto" id="foto4" src="foto4.jpeg" alt="Foto 4">
+  <img class="foto" id="foto5" src="foto5.jpeg" alt="Foto 5">
+</div>
+
+<audio id="music" loop>
+  <source src="a-thousand-years.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const code = `
+class AmorEterno {
+    constructor(heidi) {
+        this.heidi = heidi;
+        this.corazon = infinito;
+        this.sonrisas = 0;
+        this.abrazos = 0;
+    }
+
+    amar() {
+        while (tiempo.existe()) {
+            elegir(this.heidi);
+            cuidar(this.heidi);
+            sonreir();
+            abrazar();
+            this.sonrisas++;
+            this.abrazos++;
+        }
+        return "Siempre te quiero aqui mi amorcito ❤️";
+    }
+}
+
+const miAmor = new AmorEterno("Heidi");
+miAmor.amar();
+
+console.log("Te amo más que cualquier lenguaje puede expresar 💖");
+`;
+
+let i = 0;
+const speed = 30;
+
+function typeWriter() {
+  if (i < code.length) {
+    document.getElementById("code").innerHTML += code.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  } else {
+    document.getElementById("final").style.display = "block";
+    showPhotosSequentially();
+    createHearts(40);
+  }
+}
+
+function runLove() {
+  document.getElementById("code").innerHTML = "";
+  document.getElementById("final").style.display = "none";
+  document.querySelectorAll(".foto").forEach(f => {
+    f.style.display = "none";
+    f.style.opacity = 0;
+  });
+  i = 0;
+  document.getElementById("music").play();
+  typeWriter();
+}
+
+function showPhotosSequentially() {
+  const photos = document.querySelectorAll(".foto");
+  let delay = 0;
+  photos.forEach((photo) => {
+    setTimeout(() => {
+      photo.style.display = "block";
+      photo.style.opacity = 1;
+    }, delay);
+    delay += 1500;
+  });
+}
+
+function createHearts(num=30) {
+  for(let i=0; i<num; i++){
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.animationDuration = 3 + Math.random() * 3 + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }
+  setTimeout(() => createHearts(num), 1000);
+}
+</script>
+
+</body>
+</html>
