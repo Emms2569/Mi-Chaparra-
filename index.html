@@ -46,17 +46,16 @@ button:hover {
 }
 
 #final {
-  display: none;
+  display: block;
   margin-top: 30px;
   font-size: 18px;
   color: #ffb3c1;
   line-height: 1.6;
-  animation: fadeIn 2s forwards;
 }
 
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px);}
-  100% { opacity: 1; transform: translateY(0);}
+.message-content {
+  display: inline-block;
+  text-align: left;
 }
 
 .photo-gallery {
@@ -92,28 +91,14 @@ button:hover {
 
 .heart {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background: red;
-  transform: rotate(45deg);
+  font-size: 20px;
+  transform: rotate(0deg);
   animation: floatUp linear infinite;
 }
 
-.heart:before,
-.heart:after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: red;
-  border-radius: 50%;
-}
-.heart:before { top: -10px; left: 0; }
-.heart:after { left: 10px; top: 0; }
-
 @keyframes floatUp {
-  0% { transform: translateY(0) rotate(45deg); opacity:1;}
-  100% { transform: translateY(-500px) rotate(45deg); opacity:0;}
+  0% { transform: translateY(0); opacity:1;}
+  100% { transform: translateY(-500px); opacity:0;}
 }
 </style>
 </head>
@@ -129,53 +114,7 @@ button:hover {
 
 <div id="final">
 
-❤️🐤 Hooooooola mi amorciiiito papitaaaas 🐤❤️❤️🥰🥳  
-<br><br>
-Escribo todo esto porque hace muuuuuuuchos añojos nació la personita más importante que pudo haber llegado a mi vida jeje.  
-<br><br>
-Feeeeeeeeeliz cumpleañoooooos número 21, mi amor 🥳❤️🥰 
-Hoy eres un año más viejilla que ayer y no manches… ya 21 años! 
-Jajajaj estás a nada de los 40 😌❤️🥰  
-<br><br>
-Te amooooo muchisisimo 🥰🥰🥰🥳  
-Y aunque suene a poquito, en 252 meses, más de mil semanas, miles de días, millones de horas y muchísimos segundos,  
-el mundo ha tenido la suerte de conocerte ❤️  
-<br><br>
-Me hubiera encantado conocerte antes para vivir aún más aventuras juntos,  
-pero los planes del destino fueron perfectos, ❤️🥰  ❤️🥰  ❤️🥰   
-porque conocí a una personita maravillosa y me siento muy afortunado de compartir esto contigo.  
-<br><br>
-Hoy es tu día mi amor 🥳  
-Espero que nada te lo arruine.  
-Tiamoooooo enojoncitoooos papitaaaas❤️🥰💖  
-<br><br>
-Cada instante ha construido a la persona increíble que eres hoy,  
-y cada segundo contigo se vuelve un recuerdo que quiero guardar para siempre,  
-sea alegría, amor, enojos, tristeza y tooooodo ❤️  
-<br><br>
-Tu sonrisa ilumina mis días,  
-tus abrazos alborotan mi corazón  
-y tu amor le da sentido a que esté escribiendo todo esto jejeje ❤️🥰  
-<br><br>
-Deseo seguir contando el tiempo a tu lado,  
-celebrar cada año, cada logro, cada reto, ❤️🥰  
-hasta que lo último que tenga en mi memoria seas tú y esos ojitos hermosos.  
-<br><br>
-Gracias por existir, por estar a mi lado,  
-por amar con tanta dulzura y a tu modo,  
-y por hacer de mi vida un lugar más bonito desde que llegaste.  
-<br><br>
-Te amo más de lo que los números pueden contar  
-y más de lo que la imaginación permite pensar.  ❤️🥰  
-<br><br>
-Te amo más que ayer, pero menos que mañana y eso jamas lo olvides mi amor ❤️🥰   
-<br><br>
-Feliz cumpleaños mi hermosaaaaaaa 🎂❤️  
-Espero verte pronto para darte un abrazo gigante  
-y un besito a mi niña enojoncitaaaaa🥰❤️🥰.
-Te amoooo con todo mi corazon y jamas lo olvides.
-  ❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰  
-<br><br>
+<div class="message-content" id="longMessage"></div>
 
 <div class="photo-gallery">
   <img class="foto" src="foto1.jpeg" alt="Foto 1">
@@ -194,6 +133,43 @@ Te amoooo con todo mi corazon y jamas lo olvides.
 <script>
 const code = `Inicializando cumpleaños para papitas... ❤️`;
 
+const longMessage = `
+❤️🐤 Hooooooola mi amorciiiito papitaaaas 🐤❤️❤️🥰🥳  
+Escribo todo esto porque hace muuuuuuuchos añojos nació la personita más importante que pudo haber llegado a mi vida jeje.
+Feeeeeeeeeliz cumpleañoooooos número 21, mi amor 🥳❤️🥰 
+Hoy eres un año más viejilla que ayer y no manches… ya 21 años! 
+Jajajaj estás a nada de los 40 😌❤️🥰
+Te amooooo muchisisimo 🥰🥰🥰🥳
+Y aunque suene a poquito, en 252 meses, más de mil semanas, miles de días, millones de horas y muchísimos segundos,  
+el mundo ha tenido la suerte de conocerte ❤️
+Me hubiera encantado conocerte antes para vivir aún más aventuras juntos,
+pero los planes del destino fueron perfectos, ❤️🥰  ❤️🥰  ❤️🥰
+porque conocí a una personita maravillosa y me siento muy afortunado de compartir esto contigo.
+Hoy es tu día mi amor 🥳
+Espero que nada te lo arruine.
+Tiamoooooo enojoncitoooos papitaaaas❤️🥰💖
+Cada instante ha construido a la persona increíble que eres hoy,
+y cada segundo contigo se vuelve un recuerdo que quiero guardar para siempre,
+sea alegría, amor, enojos, tristeza y tooooodo ❤️
+Tu sonrisa ilumina mis días,
+tus abrazos alborotan mi corazón
+y tu amor le da sentido a que esté escribiendo todo esto jejeje ❤️🥰
+Deseo seguir contando el tiempo a tu lado,
+celebrar cada año, cada logro, cada reto, ❤️🥰
+hasta que lo último que tenga en mi memoria seas tú y esos ojitos hermosos.
+Gracias por existir, por estar a mi lado,
+por amar con tanta dulzura y a tu modo,
+y por hacer de mi vida un lugar más bonito desde que llegaste.
+Te amo más de lo que los números pueden contar
+y más de lo que la imaginación permite pensar. ❤️🥰
+Te amo más que ayer, pero menos que mañana y eso jamas lo olvides mi amor ❤️🥰
+Feliz cumpleaños mi hermosaaaaaaa 🎂❤️
+Espero verte pronto para darte un abrazo gigante
+y un besito a mi niña enojoncitaaaaa🥰❤️🥰.
+Te amoooo con todo mi corazon y jamas lo olvides.
+❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰  ❤️🥰
+`;
+
 let i = 0;
 const speed = 40;
 
@@ -203,15 +179,30 @@ function typeWriter() {
     i++;
     setTimeout(typeWriter, speed);
   } else {
-    document.getElementById("final").style.display = "block";
+    showLongMessage();
     showPhotosSequentially();
     createHearts(40);
   }
 }
 
+function showLongMessage() {
+  const container = document.getElementById("longMessage");
+  let j = 0;
+
+  function typeMessage() {
+    if (j < longMessage.length) {
+      container.innerHTML += longMessage.charAt(j);
+      j++;
+      setTimeout(typeMessage, 15);
+    }
+  }
+
+  typeMessage();
+}
+
 function runLove() {
   document.getElementById("code").innerHTML = "";
-  document.getElementById("final").style.display = "none";
+  document.getElementById("longMessage").innerHTML = "";
   document.querySelectorAll(".foto").forEach(f => {
     f.style.display = "none";
     f.style.opacity = 0;
@@ -234,10 +225,13 @@ function showPhotosSequentially() {
 }
 
 function createHearts(num=30) {
-  for(let i=0;i<num;i++){
-    let heart=document.createElement("div");
+  const emojis = ["❤️", "🥳", "🎂"];
+  for(let i=0; i<num; i++){
+    let heart = document.createElement("div");
     heart.className="heart";
+    heart.textContent = emojis[Math.floor(Math.random()*emojis.length)];
     heart.style.left=Math.random()*window.innerWidth+"px";
+    heart.style.fontSize=(20+Math.random()*20)+"px";
     heart.style.animationDuration=3+Math.random()*3+"s";
     document.body.appendChild(heart);
     setTimeout(()=>heart.remove(),6000);
