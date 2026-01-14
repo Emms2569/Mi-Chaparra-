@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mi papitas amorcito papitas❤️</title>
+<title>Mi papitas ❤️</title>
 
 <style>
 body {
@@ -48,8 +48,9 @@ button:hover {
 #final {
   display: none;
   margin-top: 30px;
-  font-size: 20px;
+  font-size: 18px;
   color: #ffb3c1;
+  line-height: 1.6;
   animation: fadeIn 2s forwards;
 }
 
@@ -58,14 +59,35 @@ button:hover {
   100% { opacity: 1; transform: translateY(0);}
 }
 
-.foto {
-  max-width: 80%;
-  margin: 20px 0;
-  border-radius: 12px;
-  box-shadow: 0 0 20px #ff7b72;
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.photo-gallery .foto {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(255,123,114,0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
   display: none;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out;
+}
+
+.photo-gallery .foto:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(255,123,114,0.8);
+}
+
+@media screen and (max-width: 600px) {
+  .photo-gallery .foto {
+    width: 80%;
+    height: auto;
+  }
 }
 
 .heart {
@@ -98,28 +120,69 @@ button:hover {
 
 <body>
 
-<h2>Papas <span style="color:#ffb3c1;">amor.exe</span> para mi papitas enojoncitas...</h2>
+<h2>Ejecutando <span style="color:#ffb3c1;">amor.exe</span> para mi papitas...</h2>
 
 <pre id="code"></pre><span class="cursor">|</span>
 
 <br>
-<button onclick="runLove()">Presioname amor jajaja ❤️</button>
+<button onclick="runLove()">Ejecutar amor ❤️</button>
 
 <div id="final">
-  ❤️ Heidi, tiamoooo amorcito ❤️  
-  <br><br>
-  Eres mi casualidad favorita,  
-  mi decisión diaria,  
-  y el amor que quiero ejecutar  
-  por el resto de mi vida.
-  te amoooo mi amorcito 🥰❤️
-  Feliiiiiiiz Cumpleañooooos!!!!! 🥳❤️❤️
-  <br><br>
-  <img class="foto" id="foto1" src="foto1.jpeg" alt="Foto 1">
-  <img class="foto" id="foto2" src="foto2.jpeg" alt="Foto 2">
-  <img class="foto" id="foto3" src="foto3.jpeg" alt="Foto 3">
-  <img class="foto" id="foto4" src="foto4.jpeg" alt="Foto 4">
-  <img class="foto" id="foto5" src="foto5.jpeg" alt="Foto 5">
+
+❤️🐤 Hooooooola mi amorciiiito papitaaaas 🐤❤️❤️🥰🥳  
+<br><br>
+Escribo todo esto porque hace muuuuuuuchos añojos nació la personita más importante que pudo haber llegado a mi vida jeje.  
+<br><br>
+**Feeeeeeeeeliz cumpleañoooooos número 21**, mi amor 🥳  
+Hoy eres un año más viejilla que ayer y no manches… ¡ya 21 años!  
+Jajajaj estás a nada de los 40 😌  
+<br><br>
+Te amooooo muchisisimo 🥰🥰🥰🥳  
+Y aunque suene a poquito, en **252 meses, más de mil semanas, miles de días, millones de horas y muchísimos segundos**,  
+el mundo ha tenido la suerte de conocerte ❤️  
+<br><br>
+Me hubiera encantado conocerte antes para vivir aún más aventuras juntos,  
+pero los planes del destino fueron perfectos,  
+porque conocí a una personita maravillosa y me siento muy afortunado de compartir esto contigo.  
+<br><br>
+Hoy es tu día mi amor 🥳  
+Espero que nada te lo arruine.  
+**Tiamoooooo enojoncitoooos** 💖  
+<br><br>
+Cada instante ha construido a la persona increíble que eres hoy,  
+y cada segundo contigo se vuelve un recuerdo que quiero guardar para siempre,  
+sea alegría, amor, enojos, tristeza y tooooodo ❤️  
+<br><br>
+Tu sonrisa ilumina mis días,  
+tus abrazos alborotan mi corazón  
+y tu amor le da sentido a que esté escribiendo todo esto jejeje ❤️🥰  
+<br><br>
+Deseo seguir contando el tiempo a tu lado,  
+celebrar cada año, cada logro, cada reto,  
+hasta que lo último que tenga en mi memoria seas tú y esos ojitos hermosos.  
+<br><br>
+Gracias por existir, por estar a mi lado,  
+por amar con tanta dulzura y a tu modo,  
+y por hacer de mi vida un lugar más bonito desde que llegaste.  
+<br><br>
+Te amo más de lo que los números pueden contar  
+y más de lo que la imaginación permite pensar.  
+<br><br>
+**Te amo más que ayer, pero menos que mañana.**  
+<br><br>
+Feliz cumpleaños mi hermosaaaaaaa 🎂❤️  
+Espero verte pronto para darte un abrazo gigante  
+y un besito a mi niña enojoncitaaaaa 💋🥰  
+<br><br>
+
+<div class="photo-gallery">
+  <img class="foto" src="foto1.jpeg" alt="Foto 1">
+  <img class="foto" src="foto2.jpeg" alt="Foto 2">
+  <img class="foto" src="foto3.jpeg" alt="Foto 3">
+  <img class="foto" src="foto4.jpeg" alt="Foto 4">
+  <img class="foto" src="foto5.jpeg" alt="Foto 5">
+</div>
+
 </div>
 
 <audio id="music" loop>
@@ -127,36 +190,10 @@ button:hover {
 </audio>
 
 <script>
-const code = `
-class AmorEterno {
-    constructor(heidi) {
-        this.heidi = heidi;
-        this.corazon = infinito;
-        this.sonrisas = 0;
-        this.abrazos = 0;
-    }
-
-    amar() {
-        while (tiempo.existe()) {
-            elegir(this.heidi);
-            cuidar(this.heidi);
-            sonreir();
-            abrazar();
-            this.sonrisas++;
-            this.abrazos++;
-        }
-        return "Siempre te quiero aqui mi amorcito ❤️";
-    }
-}
-
-const miAmor = new AmorEterno("Heidi");
-miAmor.amar();
-
-console.log("Te amo más que cualquier lenguaje puede expresar 💖");
-`;
+const code = `Inicializando sorpresa romántica para Heidi... ❤️`;
 
 let i = 0;
-const speed = 30;
+const speed = 40;
 
 function typeWriter() {
   if (i < code.length) {
@@ -185,7 +222,7 @@ function runLove() {
 function showPhotosSequentially() {
   const photos = document.querySelectorAll(".foto");
   let delay = 0;
-  photos.forEach((photo) => {
+  photos.forEach(photo => {
     setTimeout(() => {
       photo.style.display = "block";
       photo.style.opacity = 1;
@@ -195,15 +232,15 @@ function showPhotosSequentially() {
 }
 
 function createHearts(num=30) {
-  for(let i=0; i<num; i++){
-    let heart = document.createElement("div");
-    heart.className = "heart";
-    heart.style.left = Math.random() * window.innerWidth + "px";
-    heart.style.animationDuration = 3 + Math.random() * 3 + "s";
+  for(let i=0;i<num;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.style.left=Math.random()*window.innerWidth+"px";
+    heart.style.animationDuration=3+Math.random()*3+"s";
     document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 6000);
+    setTimeout(()=>heart.remove(),6000);
   }
-  setTimeout(() => createHearts(num), 1000);
+  setTimeout(()=>createHearts(num),1200);
 }
 </script>
 
